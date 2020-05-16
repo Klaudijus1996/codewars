@@ -1,0 +1,21 @@
+"use stritct";
+
+function multiplyAndFilter(array, multiplier){
+    let sum = [];
+    for ( let i=0;i<array.length;i++ ) {
+        const aL = array[i];
+        let kazkas = aL * multiplier;
+        sum.push(kazkas);
+        if ( sum === undefined && isNaN(sum) ) {
+            sum--
+        }
+        console.log(sum)
+    }
+    return sum;
+}
+
+
+// console.log(multiplyAndFilter([1,2,3,4], 1.5),'->', [1.5, 3, 4.5, 6]);
+// console.log(multiplyAndFilter([1,2,3], 0),'->', [0, 0, 0]);
+// console.log(multiplyAndFilter([0,0,0], 2),'->', [0, 0, 0]);
+console.log(multiplyAndFilter([1, null, function(){}, 2.5, 'string', 10, undefined, {}, []], 3),'->', [3,7.5,30]);
